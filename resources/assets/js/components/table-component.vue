@@ -43,14 +43,14 @@
     </template>
     <template slot="footer">
       <td colspan="100%">
-        <pagination-component></pagination-component>
+        <template>
+          <div class="text-xs-left">
+            <v-pagination v-model="pagination.page" :length="pages"></v-pagination>
+          </div>
+        </template>
         <div class="btn-group">
-          <div>
-            <v-btn color="primary">Send message to selected (2)</v-btn>
-          </div>
-          <div>
-            <v-btn color="primary">Delete selected (2)</v-btn>
-          </div>
+          <send-component></send-component>
+          <delete-component></delete-component>
         </div>
       </td>
     </template>
@@ -61,9 +61,7 @@
   export default {
     data () {
       return {
-        pagination: {
-          sortBy: 'name'
-        },
+        pagination: {},
         selected: [],
         headers: [
           {
@@ -139,6 +137,11 @@
           this.pagination.sortBy = column
           this.pagination.descending = false
         }
+      }
+    },
+    computed: {
+      pages () {
+        return this.pagination.rowsPerPage ? Math.ceil(this.items.length / this.pagination.rowsPerPage) : 0
       }
     }
   }

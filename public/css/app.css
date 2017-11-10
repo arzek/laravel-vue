@@ -12864,6 +12864,15 @@ table.table tfoot tr {
       flex-wrap: wrap;
   padding-top: 12px;
 }
+.btn-group .layout {
+  width: inherit !important;
+  -webkit-box-pack: start !important;
+      -ms-flex-pack: start !important;
+          justify-content: flex-start !important;
+  -webkit-box-flex: initial !important;
+      -ms-flex: initial !important;
+          flex: initial !important;
+}
 .table tfoot tr td {
   padding: 24px !important;
 }

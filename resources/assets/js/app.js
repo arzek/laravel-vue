@@ -15,8 +15,9 @@ window.Vuetify = require('vuetify');
  */
 
 
+Vue.component('send-component', require('./components/send-component.vue'));
+Vue.component('delete-component', require('./components/delete-component.vue'));
 Vue.component('table-component', require('./components/table-component.vue'));
-Vue.component('pagination-component', require('./components/pagination-component.vue'));
 Vue.component('layout-component', require('./components/layout-component.vue'));
 Vue.component('example', require('./components/Example.vue'));
 
